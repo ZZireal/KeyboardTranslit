@@ -6,8 +6,8 @@ function App() {
   const [outputString, setOutputString] = useState('');
   console.log(inputString);
 
-  const engString = ` qwertyuiop[]asdfghjkl;'zxcvbnm,./QWERTYUIOP{}ASDFGHJKL:"ZXCVBNM<>?1234567890-=!@#$%^&*()_+`;
-  const ruString = ` йцукенгшщзхъфывапролджэячсмитьбю.ЙЦУКЕНГШЩЗХЪФЫВАПРОЛДЖЭЯЧСМИТЬБЮ,1234567890-=!"№;%:?*()_+`;
+  const engString = ` qwertyuiop[]asdfghjkl;'zxcvbnm,./QWERTYUIOP{}ASDFGHJKL:"ZXCVBNM<>?1234567890-=!@#$%^&*()_+\`~`;
+  const ruString = ` йцукенгшщзхъфывапролджэячсмитьбю.ЙЦУКЕНГШЩЗХЪФЫВАПРОЛДЖЭЯЧСМИТЬБЮ,1234567890-=!"№;%:?*()_+ёЁ`;
 
   const engArray = engString.split('');
   const ruArray = ruString.split('');
@@ -15,7 +15,7 @@ function App() {
   const translateInputString = useCallback(() => {
     const inputArray = inputString.split('');
     let output = '';
-    inputArray.forEach((inputItem, inputIndex) => {
+    inputArray.forEach((inputItem) => {
       engArray.forEach((engItem, engIndex) => {
         if (inputItem === engItem) {
           output += ruArray[engIndex];
